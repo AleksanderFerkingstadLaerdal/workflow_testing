@@ -3,23 +3,13 @@ name: build and release
 on:
   push:
     branches:
-      - main  
+      - main
   workflow_dispatch: # This event allows manual triggering of the workflow
 
 jobs:
   build:
     runs-on: self-hosted
+    container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.1
     steps:
-      - name: tell run reason
-        run: echo ${{ github.event_name }}
-
-      - name: Cache docker image
-        uses: actions/cache@v3
-        id: docker-cache
-        with:
-          path: run_reason.txt
-          key: ${{ runner.os }}-docker
-          restore-keys: ${{ runner.os }}-docker
-      
-      - name: echo to file
-        run: echo ${{ github.event_name }} > run_reason.txt
+      - name: test
+        run: west
