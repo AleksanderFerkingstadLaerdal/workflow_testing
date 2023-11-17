@@ -1,22 +1,14 @@
 name: build and release
 
 on:
-  pull_request:
-    branches:
-      - main
-    types:
-      - opened
-      - synchronize
   push:
-    branches-ignore:
-      - '*'
-    tags:
-      - v*
+    branches:
+      - main  
   workflow_dispatch: # This event allows manual triggering of the workflow
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
     steps:
       - name: tell run reason
         run: echo ${{ github.event_name }}
