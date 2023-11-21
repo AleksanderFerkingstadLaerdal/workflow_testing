@@ -12,11 +12,11 @@ jobs:
     container: 
       image: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.3
       volumes: 
-        - ../.:/workdir
-    defaults:
-      run:
-        shell: bash
+        - .:/workdir
     steps:
       - name: test
+        run: which nrfutil
+        shell: bash
+      - name: test2
         run: nrfutil toolchain-manager launch -- west
         shell: bash
