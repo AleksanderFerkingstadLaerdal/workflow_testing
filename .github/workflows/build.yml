@@ -16,3 +16,4 @@ jobs:
     steps:
       - name: test
         run: nrfutil toolchain-manager launch -- west
+        shell: bash
