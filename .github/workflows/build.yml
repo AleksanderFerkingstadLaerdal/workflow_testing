@@ -15,7 +15,10 @@ jobs:
         - .:/workdir
     steps:
       - name: test
-        run: which nrfutil
+        run: | 
+          which nrfutil
+          nrfutil install toolchain-manager
+          nrfutil toolchain-manager install --ncs-version v2.5.0
         shell: bash
       - name: test2
         run: nrfutil toolchain-manager launch -- west
