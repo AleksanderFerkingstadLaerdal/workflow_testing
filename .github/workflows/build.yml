@@ -9,7 +9,10 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.3
+    container: 
+      image: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.3
+      volumes: 
+        - .:/
     defaults:
       run:
         shell: bash
