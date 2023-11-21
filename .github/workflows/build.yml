@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.1
+    container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.3
     steps:
       - name: test
-        run: west
+        run: nrfutil toolchain-manager launch /bin/bash -- -c 'west'
