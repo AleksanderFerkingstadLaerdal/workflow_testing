@@ -13,3 +13,4 @@ jobs:
       - name: test2
         run: | 
           nrfutil list
+          nrfutil toolchain-manager search
