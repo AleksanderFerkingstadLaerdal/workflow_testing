@@ -11,5 +11,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: test2
-        run: nrfutil toolchain-manager launch -- west
-        shell: bash
+        run: nrfutil list
