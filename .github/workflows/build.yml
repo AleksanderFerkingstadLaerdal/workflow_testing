@@ -8,12 +8,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
-    container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.4
+    runs-on: self-hosted
     steps:
-      - name: test
-        run: whoami
-        shell: bash
       - name: test2
         run: nrfutil toolchain-manager launch -- west
         shell: bash
