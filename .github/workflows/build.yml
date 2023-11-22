@@ -16,3 +16,4 @@ jobs:
           nrfutil install toolchain-manager
           nrfutil list
           nrfutil toolchain-manager search
+          nrfutil toolchain-manager install --ncs-version v2.5.0
