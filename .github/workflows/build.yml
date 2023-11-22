@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-22.04
     container: 
       image: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.3
       volumes: 
