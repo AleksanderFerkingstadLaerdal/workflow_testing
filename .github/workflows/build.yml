@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu:latest
     container: 
       image: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.3
       volumes: 
