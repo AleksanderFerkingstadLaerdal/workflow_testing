@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.2
     steps:
       - name: test2
