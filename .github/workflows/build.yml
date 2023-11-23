@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    container: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.2
+    container: 
+      image: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.2
+      options: --user root
     steps:
       - name: test2
         run: | 
