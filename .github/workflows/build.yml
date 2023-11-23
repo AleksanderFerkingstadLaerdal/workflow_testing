@@ -8,12 +8,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
     container: 
       image: aleksanderlm/nrf-zephyr-build-environment:v2.5.0.2
       options: --user root
     steps:
-      - name: test2
-        run: | 
-          nrfutil list
-          nrfutil toolchain-manager search
+    - name: Print Environment Info
+      run: |
+        whoami
+        echo "HOME: $HOME"
+        env
+    - name: Interactive shell
+      run: |
+        docker run -it aleksanderlm/nrf-zephyr-build-environment:v2.5.0.2 /bin/bash
+        nrfutil list
+        nrfutil toolchain-manager search
+    - name: test2
+      run: | 
+        nrfutil list
+        nrfutil toolchain-manager search
